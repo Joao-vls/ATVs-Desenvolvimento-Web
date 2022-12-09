@@ -79,6 +79,18 @@
       }
     }
   });
+  window.addEventListener("touchmove",()=>{
+    if(dere.style.width!="77px"){
+      var val=(dere.style.width[3]=='p') ? dere.style.width[0] + dere.style.width[1]
+      +dere.style.width[2] : dere.style.width[0]+dere.style.width[1];
+      var num=125-val;
+      var pad=150-(num);
+      if(pad<330){
+        document.querySelectorAll(".pad")[0].style.paddingLeft=pad+"px";
+        document.querySelectorAll(".pad")[1].style.paddingLeft=pad+"px";
+      }
+    }
+  });
   </script>
 </body>
 </html>
