@@ -1,0 +1,125 @@
+@charset "UTF-8";
+body{
+  background-color:rgb(47 47 47) !important;
+  color: white !important;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+/*menu*/
+.nav-res{
+  width: 100px;
+  position: fixed;
+  min-width: 40px;
+  max-width: 300px;
+  height: 100%;
+  background-color: black;
+  resize: horizontal;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 3;
+}
+
+.nav-res::-webkit-resizer{
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 5px solid green;
+  border-bottom: 5px solid green;
+}
+.lo-no{
+  white-space:nowrap;
+  width: 20%;
+  height: 49px;
+
+}
+.lo-no h1{
+  font-size: 18px;
+  padding-top: 15px;
+  display: inline-block;
+  overflow: hidden;
+}
+.lo-no span{
+  font-size: 8px;
+}
+.logo{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin-left:5px;
+  display: inline-block;
+  background-color: green;
+  border-radius: 100%;
+}
+.logo-img{
+  position: absolute;
+  display: inline-block;
+  animation: anima 2s alternate-reverse infinite;
+  background-color: white;
+  top: 8px;
+  left: 6px;
+  color: black;
+  width: 2px;
+  height: 19px;
+  transform: rotate(20deg);
+  border: 2px solid white;
+}
+@keyframes anima {
+  0%{
+  transform: scale(1) rotate(20deg);
+  }
+  20%{
+    transform: scale(0) rotate(20deg);
+  }
+  40%{
+    left: 16px;
+    transform: scale(1) rotate(140deg);
+  }
+  60%{
+    left: 16px;
+    transform: scale(0) rotate(140deg);
+  }
+  80%{
+    left: 22px;
+    transform: scale(1) rotate(20deg);
+  }
+  100%{
+    left: 22px;
+    transform: scale(0) rotate(20deg);
+  }
+
+}
+/*header*/
+header{
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  max-height: 200px;
+  background-color: #000000e8;
+}
+header input[type="text"]{
+  border: 1px solid green;
+
+}
+/**/
+header button span{
+  overflow: hidden;
+  position: absolute;
+  width: 69%;
+  height: 100%;
+  top: -25%;
+  left: 13%;
+  font-size: 30px;
+}
+header input[type="text"]:focus{
+  border: 2px solid green;
+  box-shadow: -1px -1px green;
+}
+.pad{
+  padding-left: 150px;
+}
+/*Principal*/
+main{
+  position: absolute;
+  top: 250px;
+}
