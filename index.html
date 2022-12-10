@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/9f72a03fbd.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>one</title>
 </head>
 <body>
-
     <nav class="nav-res">
       <div class="lo-no">
       <div class="logo">
@@ -18,23 +18,33 @@
       </div>
       <h1>ONE<span>&reg;</span></h1>
       </div>
+      <hr>
+      <div class="links">
+        <a href="#"><i class="fa-solid fa-heart-pulse fa-2x1 " ></i><span>Favoritos</span></a>
+      </div>
+      <hr>
+  <div class="links">
+    <a href="#"><i class="fa-regular fa-square-plus"></i><span>Criar Playlists</span></a>
+  </div>
+<hr>
+<div class="links">
+  <a href="#"><i class="fa-solid fa-clock-rotate-left fa-xs"></i><span>Historico</span></a>
+</div>
+<hr>
     </nav>
+<div class="arra">
 
+</div>
   <header class="pad">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class=" align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-
 
         <div class="col-md-8">
 
-    <div class="input-group mb-3">
+    <div class="input-group mb-1">
 <input type="text" class="form-control input-text" placeholder="Search...." aria-label="Recipient's username" aria-describedby="basic-addon2">
 <div class="input-group-append">
-<button class="btn btn-outline-success btn-lg" type="button"><span>&telrec;</span></button>
+<button class="btn btn-outline-success btn-lg" type="button"><i class="fa-solid fa-magnifying-glass fa-xs"></i></button>
 </div>
 </div>
 
@@ -62,13 +72,11 @@
 
 
 
-
-
   <script type="text/javascript">
   var dere=document.querySelector(".nav-res"),maus;
   dere.style.width="125px";
-  window.addEventListener("mousemove",()=>{
-    if(dere.style.width!="77px"){
+  function res_tag(){
+    if(dere.style.width!="125px"){
       var val=(dere.style.width[3]=='p') ? dere.style.width[0] + dere.style.width[1]
       +dere.style.width[2] : dere.style.width[0]+dere.style.width[1];
       var num=125-val;
@@ -76,20 +84,30 @@
       if(pad<330){
         document.querySelectorAll(".pad")[0].style.paddingLeft=pad+"px";
         document.querySelectorAll(".pad")[1].style.paddingLeft=pad+"px";
+        //document.querySelectorAll(".pad")[2].style.paddingLeft=pad+"px";
       }
     }
+  }
+  var click=0;
+  document.querySelector(".arra").addEventListener("mousedown",()=>{
+    click=1;
+  })
+  window.addEventListener("mouseup",()=>{click=0;});
+  window.addEventListener("mouseleave",()=>{click=0;});
+  window.addEventListener("touchcancel",()=>{click=0;});
+  window.addEventListener("mousemove",(e)=>{
+    if (click && e.clientX>=40 && e.clientX<=300) {
+      document.querySelector(".nav-res").style.width=e.clientX+"px";
+      document.querySelector(".arra").style.left=e.clientX+"px";
+    }
+    res_tag();
   });
-  window.addEventListener("touchmove",()=>{
-    if(dere.style.width!="77px"){
-      var val=(dere.style.width[3]=='p') ? dere.style.width[0] + dere.style.width[1]
-      +dere.style.width[2] : dere.style.width[0]+dere.style.width[1];
-      var num=125-val;
-      var pad=150-(num);
-      if(pad<330){
-        document.querySelectorAll(".pad")[0].style.paddingLeft=pad+"px";
-        document.querySelectorAll(".pad")[1].style.paddingLeft=pad+"px";
-      }
+  window.addEventListener("touchmove",(e)=>{
+    if (click && e.clientX>=40 && e.clientX<300) {
+      document.querySelector(".nav-res").style.width=e.clientX+"px";
+      document.querySelector(".arra").style.left=e.clientX+"px";
     }
+    res_tag();
   });
   </script>
 </body>
