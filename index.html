@@ -94,7 +94,6 @@
   })
   window.addEventListener("mouseup",()=>{click=0;});
   window.addEventListener("mouseleave",()=>{click=0;});
-  window.addEventListener("touchcancel",()=>{click=0;});
   window.addEventListener("mousemove",(e)=>{
     if (click && e.clientX>=40 && e.clientX<=300) {
       document.querySelector(".nav-res").style.width=e.clientX+"px";
@@ -102,13 +101,7 @@
     }
     res_tag();
   });
-  window.addEventListener("touchmove",(e)=>{
-    if (click && e.clientX>=40 && e.clientX<300) {
-      document.querySelector(".nav-res").style.width=e.clientX+"px";
-      document.querySelector(".arra").style.left=e.clientX+"px";
-    }
-    res_tag();
-  });
+  window.addEventListener("touchmove",res_tag);
   </script>
 </body>
 </html>
