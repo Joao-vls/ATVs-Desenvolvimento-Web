@@ -43,6 +43,9 @@ hr{
     height: 36px;
     display: block !important;
   }
+  .but-play{
+    display: block !important;
+  }
 }
 /*menu*/
 .nav-res{
@@ -226,6 +229,9 @@ main{
   text-decoration: none !important;
   background-color: rgb(22 22 22);
 }
+.mus-play:hover .but-play{
+  display: block;
+}
 .img-mus{
   position: relative;
   border-radius: 10px;
@@ -241,6 +247,7 @@ main{
   color: white !important;
 }
 .but-play{
+  display: none;
   background-color: green;
   position: absolute;
   padding-top: 4px;
